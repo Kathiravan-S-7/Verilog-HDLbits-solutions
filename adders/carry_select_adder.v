@@ -1,5 +1,4 @@
-// File: carry_select_adder.v
-// Description: 32-bit Carry Select Adder
+// 32-bit Carry Select Adder
 // Author: Kathiravan S
 
 module top_module(
