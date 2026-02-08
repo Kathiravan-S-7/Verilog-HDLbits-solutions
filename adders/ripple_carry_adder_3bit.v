@@ -1,6 +1,19 @@
 // 3-bit ripple-carry adder built from three full-adder instances
 // Author: Kathiravan S
 
+// 1-bit full adder
+module full_adder(
+    input  a,
+    input  b,
+    input  cin,
+    output sum,
+    output cout
+);
+    assign sum  = a ^ b ^ cin;
+    assign cout = (a & b) | (a & cin) | (b & cin);
+endmodule
+
+
 module top_module( 
     input  [2:0] a, b,
     input  cin,
