@@ -1,0 +1,22 @@
+// 3-input LUT using an 8-bit shift register for serial write and 8:1 mux for random read
+// Author: Kathiravan S
+
+
+module top_module (
+    input clk,
+    input enable,
+    input S,
+    input A, B, C,
+    output Z ); 
+
+    reg [7:0] Q;
+
+    always @(posedge clk) begin
+        if (enable) begin
+            Q <= {Q[6:0], S};   
+        end
+    end
+
+    assign Z = Q[{A,B,C}];
+
+endmodule
